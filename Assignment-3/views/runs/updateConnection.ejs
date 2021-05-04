@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC Update Connection</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('../partials/header.ejs')%>
+        </header>
+        <form action="/runs/connection/<%=run._id%>?_method=PUT" method="POST">
+            <table>
+                <tr>
+                    <td><label>Connection name: </label></td>
+                    <td><input type="text" id="connectionName" name="connectionName" value="<%= run.connectionName%>" required></td>
+                </tr>
+                <tr>
+                    <td><label>Category: </label></td>
+                    <td><input type="text" id="category" name="category" value="<%= run.category%>" required></td>
+                </tr>
+                <tr>
+                    <td><label>Date: </label></td>
+                    <td><input type="text" id="date" name="date" value="<%=run.date%>" required></td>
+                </tr>
+                <tr>
+                    <td><label>Start Time: </label></td>
+                    <td><input type="text" id="startTime" name="startTime" value="<%=run.startTime%>" required></td>
+                </tr>
+                <tr>
+                    <td><label>End Time: </label></td>
+                    <td><input type="text" id="endTime" name="endTime" value="<%=run.endTime%>" required></td>
+                </tr>
+                <tr>
+                    <td><label>Event area: </label></td>
+                    <td><input type="text" id="eventArea" name="eventArea" value="<%=run.eventArea%>" required></td>
+                </tr>
+                <tr>
+                    <td><label>Enrolled: </label></td>
+                    <td><input type="text" id="enrolled" name="enrolled" value="<%=run.enrolled%>" required></td>
+                </tr>
+                <tr>
+                    <td><label>Description: </label></td>
+                    <td><textarea name="description" id="description" name="description" required><%=run.description%></textarea></td>
+                </tr>
+                <tr>
+                    <td><label>Benefits: </label></td>
+                    <td><textarea name="benefits" id="benefits" name="benefits"><%=run.benefits%></textarea></td>
+                </tr>
+                <tr>
+                    <td><label>Image: </label></td>
+                    <td><input type="text" id="image" value="<%=run.imageURL%>" name="image"></td>
+                </tr>
+            </table>
+            <button>Update</button><br>
+        </form>
+
+        <%- include('../partials/aside.ejs') %>
+
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

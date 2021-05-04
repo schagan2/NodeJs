@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC Runner's Connections</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('../partials/header.ejs')%>
+    
+            <%- include('../partials/navigation.ejs') %>
+        </header>
+
+        <div class="eventsList">
+            <% categories.forEach(category => {%>
+            <div>
+                <h2><%= category %> Run</h2>
+                <ul class="simple">
+                    <% runs.forEach(run => { if(run.category === category){ %>
+                        <li><a href="connection/<%= run._id%>"><%= run.connectionName %></a></li>
+                    <%}})%>
+                </ul>
+                <br>
+                <br>
+            </div>
+            
+        <%})%>
+        </div>
+        <%- include('../partials/aside.ejs') %>
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

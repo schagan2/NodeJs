@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>
+        Profile
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+        <%- include('../partials/nav.ejs')%>
+        <%- include('../partials/message.ejs')%>
+            <h3>Welcome
+                <%= user.name%>, here are your restaurants.
+            </h3>
+            <% if(restaurants.length > 0) {%>
+                <table>
+                    <% restaurants.forEach(element=>{%>
+                        <tr>
+                            <td>
+                                <a href="/restaurants/<%= element._id%>">
+                                    <%= element.name%>
+                                </a><br> </td>
+                        </tr>
+                        <%});%>
+                </table>
+                <%}%>
+
+                    <%- include('../partials/footer.ejs')%>
+</body>
+
+
+</html>

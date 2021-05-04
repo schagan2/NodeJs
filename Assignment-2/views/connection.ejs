@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% var runName = runTypeObject.connectionName %>
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC <%= runName %></title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('./partials/header.ejs')%>
+    
+            <%- include('./partials/navigation.ejs') %>
+        </header>
+
+        <nav class="connectionNav">
+            <a href="/Connections">Event Connections</a>
+        </nav>
+
+        <div class="connectionDescription">
+            <h2><%= runName %></h2>
+            
+            <table>
+                <tr>
+                    <td><img id="runImages" src="/<%= runName.replace(/ /g, '') %>.jpg" alt="Image not found."/></td>
+                    <td id="timings">
+                        Mark date on <%= runTypeObject.date %><br>
+                    <i><b>Timing: </b></i><%= runTypeObject.time %><br>
+                    <i><b>Event Area: </b></i><%= runTypeObject.eventArea %><br>
+                    <i><b>Hosted by: </b></i><%= runTypeObject.eventHost %>
+                    </td>
+                </tr>
+            </table>
+            
+            <div id="baseRunDescription">
+                <b>Description</b><br/><%= runTypeObject.description%> <br/><br/>
+                <b><i>Benefits:</i></b><br/>
+                <ul>
+                    <% (runTypeObject.benefits).forEach(run => { %>
+                        <li><%= run %></li>
+                    <% }) %>
+                </ul>
+            </div>
+            <br/>
+            <div id="buttons">
+                <b>Would you like to join?</b><br/>
+                <button id="yes" onclick="document.location='/savedConnections'">Yes</button>
+                <button id="no" onclick="document.location='/savedConnections'">No</button>
+                <button id="nexttime" onclick="document.location='/savedConnections'">Next time</button>
+            </div>
+        </div>
+        
+        <%- include('./partials/aside.ejs') %>
+
+        <%- include('./partials/footer.ejs')%>
+    </body>
+</html>

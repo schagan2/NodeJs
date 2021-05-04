@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>List of restaurants</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="margin: 0;">
+
+    <%- include('./partials/header.ejs', {headerName: 'Fast Food Inc'}) %>
+
+    <% if(fastFoodArray.length != 0) { %>
+    <table>
+        <tr>
+            <th>Restaurant Name</th>
+        </tr>
+        <% fastFoodArray.forEach(restaurant => { %>
+        <tr>
+            <td><a href="restaurant/<%= restaurant.name %>"><%= restaurant.name %></a></td>
+        </tr>
+        <% }) %>
+
+    </table>
+    <% } else { %>
+    <h3>There are no restaurants to display.</h3>
+    <% } %>
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>

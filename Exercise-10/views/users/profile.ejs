@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>
+        Profile
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+        <%- include('../partials/nav.ejs')%>
+            <h3>Welcome
+                <%= user.name%>, here are the restaurants list:
+            </h3>
+            <!--Added a table to display the list of restaurants that the logged in user has added.-->
+            <table>
+                <% data.forEach(restaurant => { %>
+                    <tr>
+                        <td>
+                            <a href="/restaurants/<%= restaurant._id%>">
+                                <%= restaurant.name%>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>
+            <%- include('../partials/footer.ejs')%>
+</body>
+
+
+</html>

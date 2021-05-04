@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC Login</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('./partials/header.ejs')%>
+        </header>
+        <form method="GET">
+            <label>Email: </label>
+            <input type="text" name="email" /><br/>
+            <label>Password: </label>
+            <input type="password" name="password" /><br/>
+
+            <input type="submit" value="Login"></input>
+        </form>
+
+        <%- include('./partials/aside.ejs') %>
+
+        <%- include('./partials/footer.ejs')%>
+    </body>
+</html>

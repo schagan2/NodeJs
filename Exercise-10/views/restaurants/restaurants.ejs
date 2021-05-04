@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>
+        Restaurants
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+        <%- include('../partials/nav.ejs')%>
+            <% if(data.length > 0) {%>
+                <table>
+                    <tr>
+                        <th>Restaurant Name</th>
+                    </tr>
+                    <% data.forEach(element=>{%>
+                        <tr>
+                            <td>
+                                <a href="/restaurants/<%= element._id%>">
+                                    <%= element.name%>
+                                </a><br>
+                                <!--Added a check whether user is authorized to edit or delete the restaurant.-->
+                                <% if(element.user != undefined && user.name === (element.user.firstName)){ %>
+                                <form>
+                                    <button type="submit" formmethod="GET" formaction="/restaurants/<%= element._id%>/update">Edit</button>
+                                    <button type="submit" formmethod="POST" formaction="/restaurants/<%= element._id%>?_method=DELETE">Delete</button>
+                                </form>
+                                <% } %>
+                            </td>
+                        </tr>
+                        <%});%>
+                </table>
+                <%}%>
+                    <%- include('../partials/footer.ejs')%>
+</body>
+
+
+</html>

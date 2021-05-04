@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Saved Connection page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('./partials/header.ejs')%>
+    
+            <nav class="loginRight">
+                <a>Start a new connection</a>&nbsp;&nbsp;|
+                <a>Log out</a>&nbsp;&nbsp;|
+                <a>My Connections</a>&nbsp;&nbsp;
+            </nav>
+        </header>
+
+        <table class="connectionNav" id="navSavedConnections">
+            <tr>
+                <td><a href="Connections">Event Connections</a></td>
+                <td id="userConnection">Welcome User</td>
+            </tr>
+        </table>
+
+        <div id="welcome"><b>User Connections</b></div>
+
+        <table class="savedConnections">
+            <tr>
+                <th>Connection Events</th>
+                <th>Category</th>
+                <th>Enrolled status</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Base Run</td>
+                <td>Simple Run</td>
+                <td>Yes</td>
+                <td>
+                    <button onclick="document.location='connection/S001'">Update</button>
+                    <button onclick="document.location='savedConnections'">Delete</button>
+                </td>
+            </tr>
+        </table>
+        
+        <aside>
+            <img class="runPicture" src="./run_picture.jpg" alt="Image not found."/>
+        </aside>
+
+        <%- include('./partials/footer.ejs')%>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>
+        Restaurants
+    </title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs')%>
+        <%- include('./partials/nav.ejs')%>
+            <% if(restaurants.length > 0) {%>
+                <table>
+                    <tr>
+                        <th>Restaurant Name</th>
+                    </tr>
+                    <% restaurants.forEach(element=>{%>
+                        <tr>
+                            <td>
+                                <a href="/restaurants/<%= element._id%>">
+                                    <%= element.name%>
+                                </a>
+                            </td>
+                            <td>
+                                <form>
+                                    <button type="submit" formmethod="POST" 
+                                    formaction="/restaurants/<%=element._id%>?_method=DELETE">Delete</button>
+                                    <button type="submit" formmethod="GET" 
+                                    formaction="/restaurants/<%=element._id%>/update">Edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%});%>
+                </table>
+                <%}%>
+                    <%- include('./partials/footer.ejs')%>
+</body>
+
+
+</html>

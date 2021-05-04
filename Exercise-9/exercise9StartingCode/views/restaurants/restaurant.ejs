@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>
+        <%=name%>
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+        <%- include('../partials/nav.ejs')%>
+            <img src='<%= data.imageURL%>' alt='<%= name%>'>
+            <table>
+                <tr>
+                    <th>Restaurant Name</th>
+                    <th>Year Found</th>
+                    <th>CEO</th>
+                </tr>
+                <tr>
+                    <td>
+                        <%= data.name%>
+                    </td>
+                    <td>
+                        <%= data.yearFounded%>
+                    </td>
+                    <td>
+                        <%= data.owner%>
+                    </td>
+
+                </tr>
+            </table>
+            <%- include('../partials/footer.ejs')%>
+</body>
+
+
+</html>

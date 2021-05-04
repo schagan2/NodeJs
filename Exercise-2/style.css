@@ -1,0 +1,21 @@
+header, footer{
+    color: white;
+    background-color: blue;
+    text-align: center;
+    width: 100%;
+}
+
+#last{
+    bottom: 0;
+    height: 30px;
+    padding: 10px 10px 0px 10px;
+    position: fixed;
+}
+
+table, th, td, img{
+    border: 1px solid black;
+}
+
+#image{
+    width: 300px;
+}

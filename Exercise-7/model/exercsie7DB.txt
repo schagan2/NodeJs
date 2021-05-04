@@ -1,0 +1,18 @@
+db.restaurants.insertMany([{
+    name: "Bojangles",
+    yearFounded: 1977,
+    owner: "Jack Fulk",
+    imageURL: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBojangles_(restaurant)&psig=AOvVaw0LKQIP0hN0_JreydW5TH5T&ust=1604010206406000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjXx-ep2OwCFQAAAAAdAAAAABAD"
+},
+{
+    name: "Chick-fil-A",
+    yearFounded: 1946,
+    owner: "S. Truett Cathy",
+    imageURL: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.takeoutcab.com%2Fpng%2Fv_716_i978.png&imgrefurl=https%3A%2F%2Fwww.takeoutcab.com%2Fr%2F978%2Frestaurants%2Fdelivery%2FFast-Food%2FChick-fil-A-Cheektowaga&tbnid=zyBAWneT3OklAM&vet=12ahUKEwiXy6L5qdjsAhUFhlMKHTesBhwQMygFegUIARDWAQ..i&docid=ZNI-DtuVW0rbAM&w=300&h=158&q=chick%20fil%20a&ved=2ahUKEwiXy6L5qdjsAhUFhlMKHTesBhwQMygFegUIARDWAQ"
+},
+{
+    name: "Subway",
+    yearFounded: 1965,
+    owner: "Fred DeLuca, Peter Buck",
+    imageURL: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.subway.com%2F&psig=AOvVaw3Z6z2bVOdGACwBZqLDYHFv&ust=1604010292594000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjlipKq2OwCFQAAAAAdAAAAABAD"
+}])

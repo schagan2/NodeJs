@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC Runner's Connections</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('./partials/header.ejs')%>
+    
+            <%- include('./partials/navigation.ejs') %>
+        </header>
+
+        <nav class="connectionNav">
+            <a href="Connections">Event Connections</a>
+        </nav>
+
+        <div class="eventsList">
+            <div>
+                <h2>SIMPLE RUN</h2>
+                <ul class="simple">
+                    <% simpleRun.forEach(simpleruns => { %>
+                    <li><a href="connection/<%= simpleruns.runId %>"><%= simpleruns.runName %></a></li>
+                    <% }) %>
+                </ul>
+                <br>
+                <br>
+            </div>
+            <div>
+                <h2>EXTENSIVE RUN</h2>
+                <ul class="extensive">
+                    <% extensiveRun.forEach(extensiveruns => { %>
+                    <li><a href="connection/<%= extensiveruns.runId %>"><%= extensiveruns.runName %></a></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <%- include('./partials/aside.ejs') %>
+        <%- include('./partials/footer.ejs')%>
+    </body>
+</html>

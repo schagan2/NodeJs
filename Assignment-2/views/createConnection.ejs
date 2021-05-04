@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC Create Connection</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('./partials/header.ejs')%>
+        </header>
+        <form method="GET">
+            <label>Date: </label>
+            <input type="date"><br/>
+            <label>Time: </label>
+            <input type="time"><br/>
+            <label>Event area: </label>
+            <input type="text"><br/>
+            <label>Hosted by: </label>
+            <input type="text"><br/>
+            <label>Description: </label>
+            <textarea name="description"></textarea><br/>
+            <label>Benefits: </label>
+            <textarea name="benefits"></textarea><br/>
+            <label>Image: </label>
+            <input type="text"><br/>
+            <input type="submit" value="Create"></input>
+        </form>
+
+        <%- include('./partials/aside.ejs') %>
+
+        <%- include('./partials/footer.ejs')%>
+    </body>
+</html>

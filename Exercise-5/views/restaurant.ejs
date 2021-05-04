@@ -1,0 +1,30 @@
+<html>
+    <% var name = restaurant.name %>
+    <head>
+        <meta charset="UTF-8">
+        <title><%= name %></title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+    <body style="margin: 0;">
+
+        <%- include('./partials/header.ejs', {headerName: name }) %>
+
+        <img src="/<%=name%>.jpg" id="image" alt="Image not found.">
+        
+        <table>
+            <tr>
+                <th>Restaurant Name</th>
+                <th>Year Founded</th>
+                <th>Founder</th>
+            </tr>
+            <tr>
+                <td><%= name %></td>
+                <td><%= restaurant.yearFounded %></td>
+                <td><%= restaurant.owner %></td>
+            </tr>
+        </table>
+        
+        <%- include('./partials/footer.ejs') %>
+
+    </body>
+</html>

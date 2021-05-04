@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Connections</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('../partials/header.ejs')%>
+            <%- include('../partials/navigation.ejs')%>
+        </header>
+
+    <div id="tables">
+        <div id="welcome"><b><%= user.name %> Connections</b></div><br/>
+        <table class="savedConnections">
+            <tr>
+                <th>Connection Events</th>
+                <th>Category</th>
+                <th>Enrolled status</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Base Run</td>
+                <td>Simple Run</td>
+                <td>Yes</td>
+                <td>
+                    <form>
+                        <button type="submit" formmethod="GET" formaction="/runs/myConnections">Edit</button>
+                        <button type="submit" formmethod="GET" formaction="/runs/myConnections">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        
+        <div id="welcome"><b><%= user.name %> RSVP Connections</b></div><br/>
+        <table class="rsvpConnections">
+            <tr>
+                <th>Connection Events</th>
+                <th>Category</th>
+                <th>Enrolled status</th>
+                <th></th>
+            </tr>
+            <% runs.forEach(run => { %>
+            <tr>
+                <td><%= run.connectionName %></td>
+                <td><%= run.category %> Run</td>
+                <td><%= run.enrolled %></td>
+                <td>
+                    <form>
+                        <button type="submit" formmethod="GET" formaction="/runs/connection/<%= run._id %>/update">Edit</button>
+                        <button type="submit" formmethod="POST" formaction="/runs/connection/<%= run._id%>?_method=DELETE">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+
+        <%- include('../partials/aside.ejs') %>
+
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

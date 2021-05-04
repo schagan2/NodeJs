@@ -1,0 +1,16 @@
+<nav class="loginRight">
+    <% if(user != null){ %>
+        <a href="/runs/createConnection">Start a new connection</a>&nbsp;&nbsp;|
+        <a href="/runs/myConnections">My Connections</a>&nbsp;&nbsp;|
+        <a href="/users/logout">Logout</a>
+    <% }else{ %>
+        <a href="/users/login">Login</a>&nbsp;&nbsp;|
+        <a href="/users/signup">Sign-up</a>&nbsp;&nbsp;
+    <% } %>
+</nav>
+<nav class="connectionNav">
+    <a href="/runs/connections">Event Connections</a>
+    <% if(user != null){ %>
+    <a id="userConnection">Welcome <%= user.name %></a>
+    <% } %>
+</nav>
