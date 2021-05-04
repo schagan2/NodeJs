@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC Create Connection</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('../partials/header.ejs')%>
+            <%- include('../partials/navigation.ejs') %>
+        </header>
+        <%- include('../partials/message.ejs') %>
+        <form action="/runs/createConnection" method="POST">
+            <table>
+                <tr>
+                    <td><label>Connection name: </label></td>
+                    <td><input type="text" id="connectionName" name="connectionName" placeholder="Name of the connection" ></td>
+                </tr>
+                <tr>
+                    <td><label>Category: </label></td>
+                    <td><input type="text" id="category" name="category" placeholder="Category" ></td>
+                </tr>
+                <tr>
+                    <td><label>Date: </label></td>
+                    <td><input type="date" id="date" name="date" ></td>
+                </tr>
+                <tr>
+                    <td><label>Start Time: </label></td>
+                    <td><input type="time" id="startTime" name="startTime" ></td>
+                </tr>
+                <tr>
+                    <td><label>End Time: </label></td>
+                    <td><input type="time" id="endTime" name="endTime" ></td>
+                </tr>
+                <tr>
+                    <td><label>Event area: </label></td>
+                    <td><input type="text" id="eventArea" name="eventArea" placeholder="Event area" ></td>
+                </tr>
+                <tr>
+                    <td><label>Description: </label></td>
+                    <td><textarea name="description" id="description" placeholder="Description" ></textarea></td>
+                </tr>
+                <tr>
+                    <td><label>Benefits: </label></td>
+                    <td><textarea name="benefits" id="benefits" placeholder="Benefits"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label>Image: </label></td>
+                    <td><input type="text" id="imageURL" name="imageURL" placeholder="image URL"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Create">
+        </form>
+
+        <%- include('../partials/aside.ejs') %>
+
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

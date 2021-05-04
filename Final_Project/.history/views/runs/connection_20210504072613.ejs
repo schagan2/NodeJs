@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% var runName = run.connectionName %>
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC <%= runName %></title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('../partials/header.ejs')%>
+            <%- include('../partials/navigation.ejs') %>
+        </header>
+
+        <%- include('../partials/message.ejs') %>
+        
+        <div class="connectionDescription">
+            <h2><%= runName %></h2>
+            
+            <table>
+                <tr>
+                    <td><img id="runImages" src="<%= run.imageURL %>" 
+                        width="200"
+                        height="100"
+                        alt="Image not found."/></td>
+                    <td id="timings">
+                        Mark date on <%= run.date %><br>
+                    <i><b>Timing: </b></i><%= run.startTime %> - <%= run.endTime %><br>
+                    <i><b>Event Area: </b></i><%= run.eventArea %><br>
+                    <i><b>Hosted by: </b></i><%= run.eventHost %>
+                    </td>
+                </tr>
+            </table>
+            
+            <div id="baseRunDescription">
+                <b>Description</b><br/><%= run.description%> <br/><br/>
+                <% if(run.benefits != null){ %>
+                <b><i>Benefits:</i></b><br/>
+                <ul>
+                    <% (run.benefits).forEach(run => { %>
+                        <li><%= run %></li>
+                    <% }) %>
+                </ul>
+                <% } %>
+            </div>
+            <br/>
+            <% if(user!=null && run.user == user.id){ %>
+                <form>
+                    <button type="submit" formmethod="GET" formaction="/runs/connection/<%= run._id %>/update">Update</button>
+                    <button type="submit" formmethod="POST" formaction="/runs/connection/<%= run._id%>?_method=DELETE">Delete</button>
+                </form>
+            <% }else{ %>
+                    <div id="buttons">
+                        <b><%=run.numberOfEnrollments%> are enrolled. Would you like to join?</b><br/>
+                        <form action="/runs/connection/<%= run._id %>/enrolledStatus" method="POST">
+                        <button type="submit" id="yes" name="yes" value="yes">Yes</button>
+                        <button type="submit" id="no" name="no" value="no">No</button>
+                        <button type="submit" id="nexttime" name="nexttime" value="nexttime">Next Time</button>
+                        </form>
+                    </div>
+            <% } %>
+        </div>
+        
+        <%- include('../partials/aside.ejs') %>
+
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

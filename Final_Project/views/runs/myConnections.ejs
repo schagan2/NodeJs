@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Connections</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('../partials/header.ejs')%>
+            <%- include('../partials/navigation.ejs')%>
+        </header>
+        <%- include('../partials/message.ejs') %>
+    <div id="tables">
+        <div class="welcome"><b><%= users.firstName %> Connections</b></div><br/>
+        <% if(runs.length > 0){ %>
+        <table class="savedConnections">
+            <tr>
+                <th>Connection Events</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+            <% runs.forEach(run => { %>
+            <tr>
+                <td><%=run.connectionName %></td>
+                <td><%=run.category %></td>
+                <td>
+                    <form>
+                        <button type="submit" formmethod="GET" formaction="/runs/connection/<%=run._id%>">Edit</button>
+                        <button type="submit" formmethod="POST" formaction="/runs/connection/<%=run._id%>?_method=DELETE">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+        <% }else{ %>
+            <b>No run is created by this user</b>
+        <% } %>
+        <br/>
+        
+        <div class="welcome"><b><%= users.firstName %> RSVP Connections</b></div><br/>
+        <table class="rsvpConnections">
+            <% if(runs.length > 0){ %>
+            <tr>
+                <th>Connection Events</th>
+                <th>Category</th>
+                <th>Enrolled status</th>
+                <th>Actions</th>
+            </tr>
+        
+            <% users.rsvp.forEach(run => { %>
+            <tr>
+                <td><%= run.run.connectionName %></td>
+                <td><%= run.run.category %> Run</td>
+                <td><%= run.enrolled %></td>
+                <td>
+                    <form>
+                        <button type="submit" formmethod="GET" formaction="/runs/connection/<%= run.run._id %>">Edit</button>
+                        <button type="submit" formmethod="POST" formaction="/runs/connection/<%= run.run._id%>/enrolledStatus?_method=DELETE">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+            
+            <% }else{ %>
+                <b> <%= users.firstName %> don't have RSVP Connections</b>
+                <%}%>
+        </table>
+    </div>
+
+        <%- include('../partials/aside.ejs') %>
+
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

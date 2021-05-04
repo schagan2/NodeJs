@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>About UNCC Runners</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('./partials/header.ejs')%>
+            <%- include('./partials/navigation.ejs') %>
+            <%- include('./partials/message.ejs') %>
+        </header>
+        
+        <p id="content">
+            <span id="about">About Us</span><br/><br/>
+            The atheletics are encouraged to follow their passion. This website provides the 
+            list of running events conducted. One who is interested can create an account for free
+            and be able to participate in the events.
+            <br/>
+            An event details such as event date, event area and the sponsors for the event 
+            are clearly mentioned. Along with this the benefits of doing the particular run. One can 
+            choose any type of run and can participate. All the interested events are displayed in the 
+            event saved connection page where one can update or delete an event of their wish.
+        </p>
+        <%- include('./partials/aside.ejs') %>
+        <%- include('./partials/footer.ejs')%>
+    </body>
+</html>

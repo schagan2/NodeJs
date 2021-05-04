@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNCC Sign-up</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <%- include('../partials/header.ejs')%>
+            <%- include('../partials/navigation.ejs') %>
+        </header>
+        <%- include('../partials/message.ejs') %>
+        <form action="/users" method="POST" class="signup">
+            <table>
+                <tr>
+                    <td><label>First Name: </label></td>
+                    <td><input type="text" id="firstName" name="firstName"/><br/></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name: </label></td>
+                    <td><input type="text" id="lastName" name="lastName"/><br/></td>
+                </tr>
+                <tr>
+                    <td><label>Email: </label></td>
+                    <td><input type="text" id="email" name="email"/><br/></td>
+                </tr>
+                <tr>
+                    <td><label>Password: </label></td>
+                    <td><input type="password" id="password" name="password"><br/></td>
+                </tr>
+            </table>
+            <button>Sign Up</button>
+        </form>
+
+        <%- include('../partials/aside.ejs') %>
+
+        <%- include('../partials/footer.ejs')%>
+    </body>
+</html>

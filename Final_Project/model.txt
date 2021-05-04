@@ -1,0 +1,136 @@
+{
+        "connectionName" : "Intervals Run",
+        "category" : "Simple",
+        "date" : "Saturday October 24 2020",
+        "startTime" : "7",
+	"endTime": "8",
+        "eventArea" : "UNCC Trail",
+        "eventHost" : "UNCC",
+        "description" : "An interval running plan alternates between periods of
+intense, fast paces followed by less intense recovery periods.You push yourself
+close to your peak heart rate during a brief sprint, then allow it to fall back
+down as you slow to a jog.",
+        "benefits" : [
+                "Will have greater anaerobic capacity.",
+                "To improve your cardiovascular system and speed up your metabol
+ism, you need to incorporate new challenges into your workout, and interval runn
+ing is the perfect fit.",
+                "Boosts weight loss."
+        ],
+        "imageURL" : "https://www.fix.com/assets/content/14028/Interval-Training
+-001.png"
+}
+{
+        "connectionName" : "Long Run",
+        "category" : "Extensive",
+        "date" : "Sunday October 25 2020",
+        "time" : "7AM - 8AM",
+        "eventArea" : "UNCC Trail",
+        "eventHost" : "UNCC",
+        "description" : "As the name implies, a long run is a prolonged effort r
+un with the main purpose of increasing endurance and stamina.These 60 to 120 min
+utes (even more) runs are all about running at an easy pace- one that's slow eno
+ugh that you could carry on a conversation without huffing and puffing.",
+        "benefits" : [
+                "Gives stronger muscles, bone strength, stronger capillaries.",
+                "Improved aerobic system.",
+                "Helps to make your running more efficient, improving your speed
+ and reducing injury risk."
+        ],
+        "imageURL" : "https://content.active.com/Assets/Active.com+Content+Site+
+Digital+Assets/Running/620/Long+Run+620.jpg"
+}
+{
+        "connectionName" : "Hill Repeat Run",
+        "category" : "Extensive",
+        "date" : "Sunday October 25 2020",
+        "time" : "7AM - 8AM",
+        "eventArea" : "UNCC Trail",
+        "eventHost" : "UNCC",
+        "description" : "Although hills come in all different lengths and degree
+s of incline, the basic concept of a hill repeat is usually the same.You run up
+the hill fast and then recover by jogging or walking down.",
+        "benefits" : [
+                "Hill repeats are an excellent way for runners to build strength
+, improve their speed, and build their mental strength and confidence in hill ru
+nning",
+                "Bust boredom.",
+                "Helps to make your running more efficient, improving your speed
+ and reducing injury risk."
+        ],
+        "imageURL" : "https://i0.wp.com/got2run4me.com/wp-content/uploads/2014/0
+7/HillRepeats.jpg"
+}
+{
+        "connectionName" : "Recovery Run",
+        "category" : "Extensive",
+        "date" : "Sunday October 25 2020",
+        "time" : "7AM - 8AM",
+        "eventArea" : "UNCC Trail",
+        "eventHost" : "UNCC",
+        "description" : "Basically, a recovery run is a short, slow run, complet
+ed within 24 hours after a hard session, usually an interval workout or a long r
+un.A recovery run can be of any distance, but as a rule shorter than your base s
+essions, and performed at a pace 60 to 90 seconds slower than your average run."
+,
+        "benefits" : [
+                "Improved recovery, fatigue restitance, bloof flow",
+                "Prevents soreness.",
+                "Adds volume and improves form."
+        ],
+        "imageURL" : "http://www.runnersequipped.com/wp-content/uploads/2016/11/
+Recovery-Run-RunnersEquipped.jpg"
+}
+{
+        "connectionName" : "Base Run",
+        "benefits" : [
+                "Allows a runner to work on form for more efficient running,Allo
+ws a runner to develop speed and endurance slowly without the risk of injury,All
+ows a runner to increase mental toughness gradually,Allows the body to adapt slo
+wly to increased stress"
+        ],
+        "category" : "Simple",
+        "date" : "October 17 2020",
+        "description" : "A base run is a relatively short to moderate-length run
+ undertaken at a runner's natural pace. While individual base runs are not meant
+ to be challenging, they are meant to be done frequently. Base runs will make up
+ a bulk of your weekly training mileage.",
+        "eventArea" : "UNCC Trail",
+        "eventHost" : "Sindhura",
+        "imageURL" : null,
+        "startTime" : "8",
+        "endTime" : "10",
+        "user" : ObjectId("5fca6c6d37d5162b186a75fc")
+}
+{
+        "connectionName" : "Progression Run",
+        "category" : "Simple",
+        "date" : "Sunday October 18 2020",
+        "startTime" : "7",
+        "endTime" : "8",
+        "eventArea" : "UNCC Trail",
+        "eventHost" : "UNCC",
+        "description" : "A progression run is a run with structured pace increas
+es from beginning to end. The distance and pace will vary based on your specific
+ training goals.They are great for building stamina, mental strength, and teachi
+ng the body to run increasingly faster at the end of a race.",
+        "benefits" : [
+                "Allows a runner to increase the stamina and fitness.",
+                "Allows runners mental patience and allows the body to fully war
+m-up.",
+                "Allows you to insert fast running into your training runs"
+        ],
+        "imageURL" : "https://1n4rcn88bk4ziht713dla5ub-wpengine.netdna-ssl.com/w
+p-content/uploads/2019/04/7M7A8245.jpg",
+}
+
+db.users.update({
+	_id: ObjectId("5fca6c6d37d5162b186a75fc")
+},{
+	$pull:{
+		"rsvp":{
+			userId: ObjectId("5fcad68fb7b303f90fafdd0d"),
+			enrolled: "Yes"
+}
+}
+})
